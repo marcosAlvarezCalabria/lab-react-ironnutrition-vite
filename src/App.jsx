@@ -6,6 +6,12 @@ import FoodBox from "./components/foodBox/FoodBox";
 function App() {
   const [foods, setFoods] = useState(foodsJson);
 
+  const handleDelete = (id)=>{
+   const updateFoods = foods.filter((food) => food.id !== id )
+   setFoods(updateFoods)
+
+  }
+
   return (
     <>
     <div className="App">
@@ -13,7 +19,7 @@ function App() {
     </div>
     {
       foods.map((food) => {
-        return <FoodBox food={food}/>
+        return <FoodBox  key={food.id} handleDelete={handleDelete} food={food}/>
         
       })
     }

@@ -1,5 +1,10 @@
 import ("./FoodBox.css")
-function FoodBox({ food }) {
+function FoodBox({ food , handleDelete}) {
+
+   const handleOnDeleteClick = () => {
+    handleDelete(food.id)
+
+   }
     return (
 
 
@@ -12,7 +17,7 @@ function FoodBox({ food }) {
                     <p className="card-text">Calories: {food.calories}</p>
                     <p className="card-text">Serving: {food.servings}</p>
                     <h3 className="card-text">Total Calories : {food.calories} kcal</h3>
-                    <button className="btn btn-primary">Delete</button>
+                    <button onClick={handleOnDeleteClick} className="btn btn-primary">Delete</button>
                 </div>
             </div>
             <hr />
