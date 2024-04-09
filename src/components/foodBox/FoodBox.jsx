@@ -3,6 +3,7 @@ function FoodBox({ food , handleDelete}) {
 
    const handleOnDeleteClick = () => {
     handleDelete(food.id)
+    console.log(food.id)
 
    }
     return (
